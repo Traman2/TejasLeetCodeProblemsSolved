@@ -7,7 +7,6 @@ import java.util.Queue;
 
 import tejasleetcodeproblemssolved.Problems.Structures.BinaryTreeNode;
 
-
 public class BinaryTreeLevelOrder {
     public static List<List<Integer>> levelOrder(BinaryTreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
