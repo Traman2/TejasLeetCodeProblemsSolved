@@ -2,7 +2,7 @@ package tejasleetcodeproblemssolved.Problems.Algrothims;
 
 public class BinarySearch {
 
-    public static int BinarySearchAlgrothim(int[] arr, int target){
+    public static int binarySearchAlgrothim(int[] arr, int target){
         int minIndex = 0;
         int maxIndex = arr.length - 1;
 
@@ -19,6 +19,6 @@ public class BinarySearch {
         int[] sorted = {1, 2, 4, 5, 8, 9, 14};
         int target = 8;
 
-        System.out.println(BinarySearchAlgrothim(sorted, target));
+        System.out.println(binarySearchAlgrothim(sorted, target));
     }
 }
