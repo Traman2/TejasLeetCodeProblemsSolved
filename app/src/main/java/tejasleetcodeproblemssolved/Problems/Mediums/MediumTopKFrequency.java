@@ -6,11 +6,7 @@ import java.util.Map;
 
 public class MediumTopKFrequency {
 
-    public static void main(String[] args) {
-        int[] nums = {1,2,2,3,3,3};
-        int k = 2;
-
-        //SOLUTION
+    public static int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer, Integer> count = new HashMap<>();
         for(int num: nums){
             count.putIfAbsent(num, 0);
@@ -25,10 +21,16 @@ public class MediumTopKFrequency {
 
         int[] answer = new int[k];
         for(int i = 0; i < k; i ++){
-            answer[i] = sorted.get(i).getValue();
+            answer[i] = sorted.get(i).getKey();
         }
 
-        System.out.println(Arrays.toString(answer));
+        return answer;
+    }
 
+    public static void main(String[] args) {
+        int[] nums = {1,2,2,3,3,3};
+        int k = 2;
+
+        System.out.println(Arrays.toString(topKFrequent(nums, k)));
     }
 }

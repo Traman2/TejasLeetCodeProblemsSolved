@@ -2,10 +2,9 @@ package tejasleetcodeproblemssolved.Problems.Mediums;
 import java.util.Stack;
 
 public class MediumStackEvaluateRPN {
-    
-    public static void main(String[] args) {
+
+    public static int evalRPN(String[] tokens) {
         Stack<Integer> answer = new Stack<>();
-        String[] tokens = {"1","2","+","3","*","4","-"};
 
         for(String token : tokens){
             //Solve and push
@@ -32,6 +31,11 @@ public class MediumStackEvaluateRPN {
                     answer.push(Integer.parseInt(token));
             }
         }
-        System.out.println(answer.peek());
+        return answer.peek();
+    }
+
+    public static void main(String[] args) {
+        String[] tokens = {"1","2","+","3","*","4","-"};
+        System.out.println(evalRPN(tokens));
     }
 }

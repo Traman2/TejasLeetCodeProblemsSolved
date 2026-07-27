@@ -6,10 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MediumGroupAnangrams {
-    
-    public static void main(String[] args) {
-        //Problem 1: Anagram classification
-        String[] strs = {"rcas", "scar", "tan", "cars", "ant"};
+
+    public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> answer = new HashMap<>();
 
         for(String s : strs){
@@ -20,6 +18,12 @@ public class MediumGroupAnangrams {
             answer.get(sortedS).add(s); //get() is to retrive value from key
         }
 
-        System.out.println(new ArrayList<>(answer.values())); //Returns 2D array of the hashmap
+        return new ArrayList<>(answer.values()); //Returns 2D array of the hashmap
+    }
+
+    public static void main(String[] args) {
+        //Problem 1: Anagram classification
+        String[] strs = {"rcas", "scar", "tan", "cars", "ant"};
+        System.out.println(groupAnagrams(strs));
     }
 }
