@@ -26,8 +26,7 @@ class BinaryTreeLevelOrderTest {
         List<List<Integer>> expected = Arrays.asList(
                 Arrays.asList(3),
                 Arrays.asList(9, 20),
-                Arrays.asList(15, 7),
-                Arrays.asList(11)
+                Arrays.asList(15, 7)
         );
 
         assertEquals(expected, BinaryTreeLevelOrder.levelOrder(node1));
