@@ -7,20 +7,18 @@ import java.util.Map;
 public class MediumTopKFrequency {
 
     public static int[] topKFrequent(int[] nums, int k) {
-        HashMap<Integer, Integer> count = new HashMap<>();
-        for(int num: nums){
-            count.putIfAbsent(num, 0);
-            count.put(num, count.get(num) + 1);
+        HashMap<Integer, Integer> frequencMap = new HashMap<>();
+        for(int num : nums){
+            frequencMap.putIfAbsent(num, 0);
+            frequencMap.put(num, frequencMap.get(num) + 1);
         }
 
-        /// HashMap methods into arrays
-        /// variable.entrySet() gives an array of the key to the set of values entries
-        /// Map.Entry<type, type> is basically the individual entries of a HashMap
-        ArrayList<Map.Entry<Integer, Integer>> sorted = new ArrayList<>(count.entrySet());
+        // Still need to learn this API of java for sorting
+        ArrayList<Map.Entry<Integer, Integer>> sorted = new ArrayList<>(frequencMap.entrySet());
         sorted.sort((a, b) -> b.getValue() - a.getValue());
 
         int[] answer = new int[k];
-        for(int i = 0; i < k; i ++){
+        for(int i = 0; i < k; i++){
             answer[i] = sorted.get(i).getKey();
         }
 
