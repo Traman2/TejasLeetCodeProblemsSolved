@@ -9,20 +9,21 @@ public class LongestNonRepeatingSubString {
         int longest = 0;
         int left = 0;
 
-        for(int i = 0; i < s.length(); i++){
-            while(dict.contains(s.charAt(i))){
-                dict.remove(s.charAt(left));
-                left++;
+        for(int right = 0; right < s.length(); right++){
+            // Contains Duplication
+            while(dict.contains(s.charAt(right))){
+                   dict.remove(s.charAt(left));
+                   left++;
             }
-            
-            longest = Math.max(longest, i - left + 1);
-            dict.add(s.charAt(i));
+
+            longest = Math.max(longest, right - left + 1);
+            dict.add(s.charAt(right));
         }
 
         return longest;
     }
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("acbdfcghlnpqrs"));
+        System.out.println(lengthOfLongestSubstring("abacadaeafagahaiajakalamanaoap"));
     }
 }
