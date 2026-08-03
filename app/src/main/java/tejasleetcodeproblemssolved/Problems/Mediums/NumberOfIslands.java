@@ -34,7 +34,7 @@ public class NumberOfIslands {
             int curR = curLocation[0];
             int curC = curLocation[1];
 
-            // Bound Checking
+            // Bound Checking (In recursive this is base ase)
             if(curR < 0 || curC < 0 || curR >= grid.length || 
             curC >= grid[0].length || grid[curR][curC] == '0') continue;
 
