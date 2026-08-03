@@ -11,14 +11,14 @@ public class MediumGroupAnangrams {
         Map<String, List<String>> answer = new HashMap<>();
 
         for(String s : strs){
-            char[] charArr = s.toCharArray(); // toCharArray() converts String --> char[]
-            Arrays.sort(charArr); //Arrays uility function sort does what it means
-            String sortedS = new String(charArr); //new String(char[]) coverts char[] --> String
-            answer.putIfAbsent(sortedS, new ArrayList<>()); //putIfAbsent() is a put method but only if key is not there first
-            answer.get(sortedS).add(s); //get() is to retrive value from key
+            char[] charArr = s.toCharArray();
+            Arrays.sort(charArr);
+            String sortedS = new String(charArr);
+            answer.putIfAbsent(sortedS, new ArrayList<>());
+            answer.get(sortedS).add(s);
         }
 
-        return new ArrayList<>(answer.values()); //Returns 2D array of the hashmap
+        return new ArrayList<>(answer.values());
     }
 
     public static void main(String[] args) {
