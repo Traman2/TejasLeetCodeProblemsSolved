@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 // Note: topKFrequent's sort only orders by count, so when two elements tie on
-// frequency their relative order in the result is unspecified. All cases below
-// use distinct frequency counts (no ties) to keep the expected order deterministic.
+// frequency their relative order in the result is unspecified.
 class MediumTopKFrequencyTest {
 
     // Check normal case with three distinct frequencies
