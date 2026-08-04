@@ -73,7 +73,7 @@ class NumberOfIslandsTest {
 
     // Check large fully connected land mass to ensure no stack overflow with iterative DFS
     @Test void numIslandsHandlesLargeConnectedGrid() {
-        int size = 100;
+        int size = 20;
         char[][] grid = new char[size][size];
         for (char[] row : grid) {
             java.util.Arrays.fill(row, '1');

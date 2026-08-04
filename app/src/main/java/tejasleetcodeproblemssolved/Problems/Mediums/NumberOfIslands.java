@@ -1,7 +1,5 @@
 package tejasleetcodeproblemssolved.Problems.Mediums;
 
-import java.util.Stack;
-
 public class NumberOfIslands {
     private static final int[][] directions = {
         {1, 0}, 
@@ -26,24 +24,16 @@ public class NumberOfIslands {
     }
 
     private static void dfs(char[][] grid, int r, int c){
-        Stack<int[]> current = new Stack<>();
-        
-        current.push(new int[]{r, c});
-        while(!current.isEmpty()){
-            int[] curLocation = current.pop();
-            int curR = curLocation[0];
-            int curC = curLocation[1];
+        if(r < 0 || c < 0) return;
+        if(r >= grid.length || c >= grid[0].length) return;
+        if(grid[r][c] == '0') return;
 
-            // Bound Checking (In recursive this is base ase)
-            if(curR < 0 || curC < 0 || curR >= grid.length || 
-            curC >= grid[0].length || grid[curR][curC] == '0') continue;
+        grid[r][c] = '0';
 
-            // Sink islands so not checked again
-            grid[curR][curC] = '0';
-            for(int[] dir : directions){
-                current.push(new int[]{curR + dir[0], curC + dir[1]});
-            }
+        for(int[] dir : directions){
+            dfs(grid, r + dir[0], c + dir[1]);
         }
+
     }
 
     public static void main(String[] args) {
@@ -66,3 +56,28 @@ public class NumberOfIslands {
     }
 }
 
+
+
+/**
+ * Stack Data Structure way
+ * private static void dfs(char[][] grid, int r, int c){
+        Stack<int[]> current = new Stack<>();
+        
+        current.push(new int[]{r, c});
+        while(!current.isEmpty()){
+            int[] curLocation = current.pop();
+            int curR = curLocation[0];
+            int curC = curLocation[1];
+
+            // Bound Checking (In recursive this is base ase)
+            if(curR < 0 || curC < 0 || curR >= grid.length || 
+            curC >= grid[0].length || grid[curR][curC] == '0') continue;
+
+            // Sink islands so not checked again
+            grid[curR][curC] = '0';
+            for(int[] dir : directions){
+                current.push(new int[]{curR + dir[0], curC + dir[1]});
+            }
+        }
+    }
+ */
